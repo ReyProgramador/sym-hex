@@ -9,7 +9,7 @@ namespace App\BoundedContext\User\Infrastructure\Repository;
 // use App\Entity\Person;
 
 // use App\Domain\Entity\Person;
-use App\BoundedContext\User\Entity\User;
+use App\BoundedContext\User\Domain\Entity\User;
 
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;

@@ -4,8 +4,11 @@ namespace App\Application;
 
 namespace App\BoundedContext\User\Application;
 
-use App\Domain\Entity\User;
-use App\Infrastructure\Repository\UserRepository;
+// use App\Domain\Entity\User;
+// use App\Infrastructure\Repository\UserRepository;
+
+use App\BoundedContext\User\Domain\Entity\User;
+use App\BoundedContext\User\Infrastructure\Repository\UserRepository;
 
 class AddUserUseCase
 {
