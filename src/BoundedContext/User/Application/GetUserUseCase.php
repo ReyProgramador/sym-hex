@@ -13,9 +13,22 @@ class GetUserUseCase
 	{
 		$users = [];
         $users = $userRepository->findAll();
-        foreach ($users  as $user) {
-            $users[] = $user->getFirstName();
-        }    
+        // foreach ($users  as $user) {
+        //     $users[] = $user->getFirstName();
+        // } 
+
+        //  $users = $userRepository->findAll();
+        // $data = [];
+
+        // foreach ($users as $user) {
+
+        //     $data[] = [
+        //         'id' => $user->getId(),
+        //         'first_name' => $user->getFirstName(),
+        //         'last_name' => $user->getLastName(),
+        //         'email' => $user->getEmail()
+        //     ];
+        // }   
 
         return $users;
 	}
