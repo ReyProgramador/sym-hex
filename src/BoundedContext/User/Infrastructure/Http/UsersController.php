@@ -9,6 +9,7 @@ namespace App\BoundedContext\User\Infrastructure\Http;
 // use App\Application\AddPersonUseCase;
 
 use App\BoundedContext\User\Application\AddUserUseCase;
+use App\BoundedContext\User\Application\GetUserUseCase;
 
 
  // App\BoundedContext\User
@@ -22,7 +23,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class UsersController extends AbstractController
 {
-    #[Route('/users', name: 'app_users')]
+    #[Route('/add', name: 'app_users')]
     // public function index(): JsonResponse
      public function index(AddUserUseCase $addUserUseCase, UserRepository $userRepository): JsonResponse
     {
@@ -32,6 +33,16 @@ class UsersController extends AbstractController
         // ]);
          return $this->json([
             'message' => 'Hi! Welcome to your new controller! '.$addUserUseCase->execute($userRepository)
+        ]);
+
+    }
+
+     #[Route('/users', name: 'app_users')]    
+     public function findAll(GetUserUseCase $getUserUseCase, UserRepository $userRepository): JsonResponse
+    {
+        
+         return $this->json([
+            'data' => $getUserUseCase->execute($userRepository)
         ]);
 
     }
