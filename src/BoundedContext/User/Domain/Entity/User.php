@@ -2,13 +2,15 @@
 
 // namespace App\Entity;
 
-namespace App\Domain\Entity;
+// namespace App\Domain\Entity;
 
-use App\Repository\PersonRepository;
+namespace App\BoundedContext\User\Domain\Entity;
+
+use App\Repository\UserRepository;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: PersonRepository::class)]
-class Person
+#[ORM\Entity(repositoryClass: UserRepository::class)]
+class User
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]

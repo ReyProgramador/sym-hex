@@ -2,11 +2,15 @@
 
 // namespace App\Repository;
 
-namespace App\Infrastructure\Repository;
+// namespace App\Infrastructure\Repository;
+
+namespace App\BoundedContext\User\Infrastructure\Repository;
 
 // use App\Entity\Person;
 
-use App\Domain\Entity\Person;
+// use App\Domain\Entity\Person;
+use App\BoundedContext\User\Entity\User;
+
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -18,14 +22,14 @@ use Doctrine\Persistence\ManagerRegistry;
  * @method Person[]    findAll()
  * @method Person[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class PersonRepository extends ServiceEntityRepository
+class UserRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Person::class);
+        parent::__construct($registry, User::class);
     }
 
-    public function add(Person $entity, bool $flush = true): void
+    public function add(User $entity, bool $flush = true): void
     {
         $this->_em->persist($entity);       
         $this->_em->flush();
